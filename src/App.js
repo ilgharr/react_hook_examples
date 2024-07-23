@@ -1,7 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
-import List from './List.js';
+// import List from './List.js';
+
+import FunctionContextComponent from './components/FunctionContextComponent';
+// import ClassContextComponent from './components/ClassContextComponent';
+import {ThemeProvider} from "./components/ThemeContext";
+export const ThemeContext = React.createContext();
 
 
 export default function App() {
@@ -126,7 +131,25 @@ export default function App() {
     //     </div>
     // )
 
-    //#################--useContext--#################
+    //#################--useContext--################# Custom hook example aswell
+    // useContext is basically for passing props without manually passing it down to children
+    // look at the difference in ClassContextComponent(doesn't use 'useContext')
+    // and look at FunctionContextComponent(does use 'useContext')
+
+    //ThemeProvider handles all logic and is passed to children
+
+    //ThemeContext.js handles updating creating and passing the values to children (ThemeContext, ThemeUpdateContext)
+    //    //      //  also contains custom hooks that give us easy access to ThemeContext and ThemeUpdateContext
+    // anything that is put inside "ThemeProvider" will have the dark and light mode effect applied
+    // return (
+    //     <>
+    //         <ThemeProvider>
+    //         <FunctionContextComponent/>
+    //         </ThemeProvider>
+    //     </>
+    // )
+
+    //#################--useReducer--#################
 
 }
 
